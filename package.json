@@ -1,14 +1,14 @@
 {
     "name": "node-express-server",
-    "version": "0.0.1",
+    "version": "0.0.1-SNAPSHOT",
     "description": "Simple node + express server",
     "main": "server/index.js",
     "repository": {
         "type": "git",
-        "url": "htpps://"
+        "url": "https://github.com/ibbatta/node-express-server.git"
     },
     "bugs": {
-        "url": "https://"
+        "url": "https://github.com/ibbatta/node-express-server/issues"
     },
     "author": "Maurizio Battaghini <maurizio.battaghini@gmail.com>",
     "license": "MIT",
@@ -26,7 +26,10 @@
     "scripts": {
         "start": "node server/index.js"
     },
-    "dependencies": {},
+    "dependencies": {
+        "express": "^4.16.3",
+        "socket.io": "^2.1.1"
+    },
     "devDependencies": {
         "babel-core": "^6.26.3",
         "babel-eslint": "^8.2.6",
