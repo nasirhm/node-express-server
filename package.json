@@ -25,10 +25,12 @@
     ],
     "scripts": {
         "start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=128 index.js --display-error-details",
-        "start:dev": "NODE_ENV=develop nodemon --optimize_for_size --max_old_space_size=128 index.js --display-error-details"
+        "start:dev": "NODE_ENV=develop nodemon index.js --display-error-details"
     },
     "dependencies": {
+        "bcrypt": "^3.0.1",
         "body-parser": "^1.18.3",
+        "dotenv": "^6.0.0",
         "express": "^4.16.3",
         "jsonwebtoken": "^8.3.0",
         "mongoose": "^5.2.17",
