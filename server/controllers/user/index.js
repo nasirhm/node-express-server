@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 import User from '../../models/user';
 
-export const signinCtrl = ({ email, password }) => {
+const signup = ({ email, password }) => {
   return new Promise((resolve, reject) => {
     bcrypt.hash(password, 10, function(err, hash) {
       if (err) {
@@ -18,7 +18,7 @@ export const signinCtrl = ({ email, password }) => {
         user
           .save()
           .then(() => {
-            resolve();
+            resolve(user);
           })
           .catch(err => {
             reject(err);
@@ -28,7 +28,7 @@ export const signinCtrl = ({ email, password }) => {
   });
 };
 
-export const signupCtrl = ({ email, password }) => {
+const signin = ({ email, password }) => {
   return new Promise((resolve, reject) => {
     User.findOne({ email: email })
       .exec()
@@ -38,9 +38,8 @@ export const signupCtrl = ({ email, password }) => {
             reject(err);
           }
           if (result) {
-            resolve();
+            resolve(user);
           }
-          reject(new Error());
         });
       })
       .catch(err => {
@@ -48,3 +47,6 @@ export const signupCtrl = ({ email, password }) => {
       });
   });
 };
+
+export const signupCtrl = signup;
+export const signinCtrl = signin;
