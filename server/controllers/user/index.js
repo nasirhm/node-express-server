@@ -40,6 +40,7 @@ const signin = ({ email, password }) => {
           if (result) {
             resolve(user);
           }
+          reject(new Error('test custom error'));
         });
       })
       .catch(err => {
