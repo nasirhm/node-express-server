@@ -4,8 +4,6 @@ import chalk from 'chalk';
 import bodyParser from 'body-parser';
 import MongoDB from 'mongoose';
 
-// import User from './routes/user';
-
 import routes from './routes';
 
 const app = express();
@@ -52,9 +50,8 @@ app.use(bodyParser.json());
 
 app.use(routes);
 
-// Test route
 app.get('/check', function(req, res) {
   res.json({
-    Tutorial: 'Welcome to the Node express JWT Tutorial'
+    TEST: 'Welcome to the Node express JWT Tutorial'
   });
 });
