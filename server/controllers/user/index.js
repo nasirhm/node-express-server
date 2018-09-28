@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken';
 
 import User from '../../models/user';
 
@@ -38,7 +39,17 @@ const signin = ({ email, password }) => {
             reject(err);
           }
           if (result) {
-            resolve(user);
+            const JWTToken = jwt.sign(
+              {
+                email: user.email,
+                _id: user._id
+              },
+              'secret',
+              {
+                expiresIn: '2h'
+              }
+            );
+            resolve({ user, token: JWTToken });
           }
           reject(new Error('test custom error'));
         });
