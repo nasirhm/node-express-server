@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import compression from 'compression';
 
-import { serverConfig } from '../config';
+import { serverConfig, logConfig } from '../config';
 import { dbConnection, dbDisconnection } from './utils';
 
 import routes from './routes';
@@ -17,7 +17,7 @@ const serverPort = serverConfig.port;
 
 const SERVER = app.listen(serverPort, () => {
   console.clear();
-  console.info(chalk.green(`🌍 => is running (on port: ${serverPort})`));
+  console.info(chalk.green(logConfig.server.connection), serverConfig.port);
   dbConnection()
     .then(res => console.log(chalk.green(res)))
     .catch(err => console.error(chalk.red(err)));
@@ -32,7 +32,7 @@ process.on('SIGINT', () => {
       })
       .catch(err => console.error(chalk.red(err)))
       .finally(() => {
-        console.log(chalk.yellow('🌍 => is close'));
+        console.log(chalk.yellow(logConfig.server.disconnection));
         process.exit(0);
       });
   });

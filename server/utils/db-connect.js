@@ -1,10 +1,9 @@
 import MongoDB from 'mongoose';
 
-import { dbConfig } from '../../config';
+import { dbConfig, logConfig } from '../../config';
 
-const connUrl = `mongodb+srv://${dbConfig.user}:${dbConfig.pass}@${
-  dbConfig.host
-}/test?retryWrites=true`;
+const { user, pass, host } = dbConfig;
+const connUrl = `mongodb+srv://${user}:${pass}@${host}/test?retryWrites=true`;
 const connSettings = {
   useNewUrlParser: true
 };
@@ -16,7 +15,7 @@ export default () => {
       connSettings
     )
       .then(() => {
-        resolve('💾 => is connected');
+        resolve(logConfig.database.connection);
       })
       .catch(err => {
         reject(err);
