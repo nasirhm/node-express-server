@@ -8,11 +8,9 @@
 
 <img src="./__repo_readme_assets__/logo-node.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./__repo_readme_assets__/logo-express.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-socket.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 
 - [x] Node 10.9.0
 - [x] Express 4.16.3
-- [x] Socket.io 2.1.1
 
 ---
 
@@ -81,8 +79,12 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [ ] Run basic server
-- [ ] Simple auth
+- [x] Run basic server
+- [x] Simple auth
+- [ ] Store auth session
+- [ ] Store server log
+- [ ] Refactory with best practices and performance
+- [ ] Create simple auth api
 
 ---
 
