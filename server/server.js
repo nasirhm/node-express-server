@@ -1,11 +1,10 @@
+import express from 'express';
+import session from 'express-session';
+import bodyParser from 'body-parser';
+import compression from 'compression';
+import helmet from 'helmet';
 import cors from 'cors';
 import chalk from 'chalk';
-import helmet from 'helmet';
-import express from 'express';
-
-import bodyParser from 'body-parser';
-import session from 'express-session';
-import compression from 'compression';
 
 import { serverConfig, logConfig } from '../config';
 import { dbConnection, dbDisconnection } from './utils';
