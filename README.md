@@ -24,7 +24,7 @@ Before cloning the repo **be sure** to install:
 
 Then:
 
-- Choose a folder for your project `cd [folder path]`
+- Choose a folder for your project and move into it `cd [folder path]`
 - Clone the repo into your project's folder `git clone [repository url]`
 
 ---
