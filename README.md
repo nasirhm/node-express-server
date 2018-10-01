@@ -49,7 +49,7 @@ in the directory of your project.
 
 ---
 
-## **Start the project**
+## **Starting the project**
 
 ##### run the server
 
